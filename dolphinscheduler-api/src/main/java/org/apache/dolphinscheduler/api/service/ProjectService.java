@@ -89,6 +89,7 @@ public class ProjectService extends BaseService{
 
         if (projectMapper.insert(project) > 0) {
             putMsg(result, Status.SUCCESS);
+            result.put(Constants.DATA_LIST,project.getId());
         } else {
             putMsg(result, Status.CREATE_PROJECT_ERROR);
         }
